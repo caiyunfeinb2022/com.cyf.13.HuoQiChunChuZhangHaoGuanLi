@@ -1,4 +1,4 @@
-
+教学计划编制菜单
 void OUTPUT() 
 { 
 system("color E"); 
