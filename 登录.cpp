@@ -2,95 +2,95 @@
 #include <stdio.h>
 #include <windows.h>
 #include <string.h>
-//×Ó´°¿ÚÕıÈ·ÏÔÊ¾
+//å­çª—å£æ­£ç¡®æ˜¾ç¤º
 int Succes();
-//×Ó´°¿Ú´íÎóÏÔÊ¾
+//å­çª—å£é”™è¯¯æ˜¾ç¤º
 int Fail();
-//½çÃæÏÔÊ¾
+//ç•Œé¢æ˜¾ç¤º
 void menuShow();
-//ÓÃ»§Ñ¡Ôñ
+//ç”¨æˆ·é€‰æ‹©
 void Function(int chose);
-//×¢²áÒ³Ãæ³É¹¦ÌáÊ¾
+//æ³¨å†Œé¡µé¢æˆåŠŸæç¤º
 int Register();
-//ÆÕÍ¨ÓÃ»§µÇÂ¼·ûºÅ
+//æ™®é€šç”¨æˆ·ç™»å½•ç¬¦å·
 int userCdFlag=0;
 
 
 int chose;
-//ÓÃ»§ÕËºÅÃÜÂëĞ£Ñé
+//ç”¨æˆ·è´¦å·å¯†ç æ ¡éªŒ
 char userCheck[50];
 char pwdCheck[16];
 
-//Æ¥ÅäÓÃ»§ÃûÓëÃÜÂë 
+//åŒ¹é…ç”¨æˆ·åä¸å¯†ç  
 int isUserName;
 int isUserPwd;
 
-//¶¨Òå¹ÜÀíÔ±µÇÂ¼ÓÃ»§Ãû ÒÔ¼°ÃÜÂë 
+//å®šä¹‰ç®¡ç†å‘˜ç™»å½•ç”¨æˆ·å ä»¥åŠå¯†ç  
 char userNameR[50] = { "123" };
 char userPwdR[16] = { "abc" };
 
-//¶¨ÒåÆÕÍ¨ÓÃ»§µÇÂ¼ÓÃ»§Ãû ÒÔ¼°ÃÜÂë 
+//å®šä¹‰æ™®é€šç”¨æˆ·ç™»å½•ç”¨æˆ·å ä»¥åŠå¯†ç  
 char userName[50]={"456"};
 char userPwd[16]={"def"};
 
-//½çÃæÏÔÊ¾
+//ç•Œé¢æ˜¾ç¤º
 void menuShow()
 {
 	printf("/*************************************/\n\n");
-	printf("\t»¶Ó­µÇÂ¼½ÌÑ§¼Æ»®±àÖÆÏµÍ³\n\n");
+	printf("\tæ¬¢è¿ç™»å½•æ•™å­¦è®¡åˆ’ç¼–åˆ¶ç³»ç»Ÿ\n\n");
 	printf("/*************************************/\n\n");
 
-	printf("Çë½øĞĞÈçÏÂÑ¡Ôñ:\n\n\t1.ÓÃ»§µÇÂ¼\n\n\t2.ÓÃ»§×¢²á\n\n\t3.²é¿´¸ü¶à\n\n\t4.ÍË³öÏµÍ³\n\n");
-	printf("ÇëÑ¡Ôñ£º");
+	printf("è¯·è¿›è¡Œå¦‚ä¸‹é€‰æ‹©:\n\n\t1.ç”¨æˆ·ç™»å½•\n\n\t2.ç”¨æˆ·æ³¨å†Œ\n\n\t3.æŸ¥çœ‹æ›´å¤š\n\n\t4.é€€å‡ºç³»ç»Ÿ\n\n");
+	printf("è¯·é€‰æ‹©ï¼š");
 }
 
 void PrintMode()
-{//ÏµÍ³²Ëµ¥Ò³Ãæ
+{//ç³»ç»Ÿèœå•é¡µé¢
 	printf("**************************************\n");
 	printf("**************************************\n");
 	printf("******                        ********\n");
-	printf("******    ½ÌÑ§¼Æ»®±àÖÆÏµÍ³    ********\n");
+	printf("******    æ•™å­¦è®¡åˆ’ç¼–åˆ¶ç³»ç»Ÿ    ********\n");
 	printf("******                        ********\n");
 	printf("******                        ********\n");
-	printf("******     0. ¿Î ³Ì Ñ§ ·Ö     ********\n");
-	printf("******     1. ¼ü Èë ¿Î ³Ì    ********\n");
-	printf("******     2. ²é Ñ¯ ĞÅ Ï¢     ********\n");
-	printf("******     3. ÏÈ ĞŞ ¹Ø Ïµ     ********\n");
-	printf("******     4. ÍË ³ö Ïµ Í³     ********\n");
+	printf("******     0. è¯¾ ç¨‹ å­¦ åˆ†     ********\n");
+	printf("******     1. é”® å…¥ è¯¾ ç¨‹    ********\n");
+	printf("******     2. æŸ¥ è¯¢ ä¿¡ æ¯     ********\n");
+	printf("******     3. å…ˆ ä¿® å…³ ç³»     ********\n");
+	printf("******     4. é€€ å‡º ç³» ç»Ÿ     ********\n");
 	printf("******                        ********\n");
 	printf("******                        ********\n");
 	printf("**************************************\n");
 	printf("**************************************\n\n\n\n");
-	printf("ÇëÑ¡ÔñÒªÊ¹ÓÃµÄ¹¦ÄÜ£º");
+	printf("è¯·é€‰æ‹©è¦ä½¿ç”¨çš„åŠŸèƒ½ï¼š");
 }
 
-//ÓÃ»§µÇÂ¼Ñ¡Ôñ
+//ç”¨æˆ·ç™»å½•é€‰æ‹©
 void userLoginChose()
 {
-	printf("ÓÃ»§µÇÂ½Ñ¡Ôñ£º\n1.ÆÕÍ¨ÓÃ»§\n2.¹ÜÀíÔ±ÓÃ»§\n");
+	printf("ç”¨æˆ·ç™»é™†é€‰æ‹©ï¼š\n1.æ™®é€šç”¨æˆ·\n2.ç®¡ç†å‘˜ç”¨æˆ·\n");
 	scanf("%d",&userCdFlag);
 	getchar();
 	
 }
 
-//ÓÃ»§Ñ¡Ôñ
+//ç”¨æˆ·é€‰æ‹©
 void Function(int chose)
 {
 	switch (chose)
 	{
 		case 1:
-			//ÆÕÍ¨ÓÃ»§
+			//æ™®é€šç”¨æˆ·
 			userLoginChose();
 			if (userCdFlag == 1)
 			{
 				userCdFlag = 0;
-				printf("ÇëÊäÈëÓÃ»§Ãû£º");
+				printf("è¯·è¾“å…¥ç”¨æˆ·åï¼š");
 				gets(userCheck);
 				//user check
 				isUserName = strcmp(userName, userCheck);
 				printf("\n");
 
-				printf("ÇëÊäÈëÃÜÂë£º");
+				printf("è¯·è¾“å…¥å¯†ç ï¼š");
 				gets(pwdCheck);
 				printf("\n");
 				//pwd check
@@ -98,7 +98,7 @@ void Function(int chose)
 
 				if ((isUserName == 0) && (isUserPwd == 0))
 				{
-					//ÓÃÓÚÅĞ¶Ï·µ»Ø²ã´Î
+					//ç”¨äºåˆ¤æ–­è¿”å›å±‚æ¬¡
 					if (Succes() == 0)
 					{
 						break;
@@ -108,7 +108,7 @@ void Function(int chose)
 					  Succes();
 					}
 				}
-				//Ê§°ÜÒ³Ãæ
+				//å¤±è´¥é¡µé¢
 				else
 				{
 					if (Fail() == 0)
@@ -125,16 +125,16 @@ void Function(int chose)
 				getchar();
 			
 			}
-			//¹ÜÀíÔ±µÇÂ¼ 
+			//ç®¡ç†å‘˜ç™»å½• 
 			else
 			{
-				printf("ÇëÊäÈëÓÃ»§Ãû£º");
+				printf("è¯·è¾“å…¥ç”¨æˆ·åï¼š");
 				gets(userCheck);
 				//user check
 				isUserName = strcmp(userNameR, userCheck);
 				printf("\n");
 
-				printf("ÇëÊäÈëÃÜÂë£º");
+				printf("è¯·è¾“å…¥å¯†ç ï¼š");
 				gets(pwdCheck);
 				printf("\n");
 				//pwd check
@@ -142,7 +142,7 @@ void Function(int chose)
 
 				if ((isUserName == 0) && (isUserPwd == 0))
 				{
-					//ÓÃÓÚÅĞ¶Ï·µ»Ø²ã´Î
+					//ç”¨äºåˆ¤æ–­è¿”å›å±‚æ¬¡
 					if (Succes() == 0)
 					{
 						break;
@@ -152,7 +152,7 @@ void Function(int chose)
 					Succes();
 					}
 				}
-				//Ê§°ÜÒ³Ãæ
+				//å¤±è´¥é¡µé¢
 				else
 				{
 					if (Fail() == 0)
@@ -171,10 +171,10 @@ void Function(int chose)
 		
 			break;
 		case 2:
-			printf("ÇëÌí¼ÓÓÃ»§Ãû£º");
+			printf("è¯·æ·»åŠ ç”¨æˆ·åï¼š");
 			gets(userName);
 			printf("\n");
-			printf("ÇëÊäÈëÃÜÂë£º");
+			printf("è¯·è¾“å…¥å¯†ç ï¼š");
 			gets(userPwd);
 			if ((userName != NULL) && (userPwd != NULL))
 			{
@@ -185,7 +185,7 @@ void Function(int chose)
 			userCdFlag = 2;
 			break;
 		case 3:
-			printf("¹ÜÀíÔ±ÕËºÅÎª123ÃÜÂëÎªabc£¬Ñ§ÉúÕËºÅÎª456ÃÜÂëÎªdef");
+			printf("ç®¡ç†å‘˜è´¦å·ä¸º123å¯†ç ä¸ºabcï¼Œå­¦ç”Ÿè´¦å·ä¸º456å¯†ç ä¸ºdef");
 			getchar();
 			break;
 
@@ -195,22 +195,22 @@ void Function(int chose)
 }
 
 
-//×Ó´°¿ÚÕıÈ·ÏÔÊ¾
+//å­çª—å£æ­£ç¡®æ˜¾ç¤º
 int Succes()
 {
 	char succes;
-	printf("/***********µÇÂ¼³É¹¦***********/\n\n");
-	printf("ÊäÈë'y'½øÈëÏµÍ³\n");
+	printf("/***********ç™»å½•æˆåŠŸ***********/\n\n");
+	printf("è¾“å…¥'y'è¿›å…¥ç³»ç»Ÿ\n");
 	scanf("%c", &succes);
 	return 	1;
 }
 
-//×Ó´°¿Ú´íÎóÏÔÊ¾
+//å­çª—å£é”™è¯¯æ˜¾ç¤º
 int Fail()
 {
 	char fail;
-	printf("/***********µÇÂ¼Ê§°Ü***********/\n\n");
-	printf("'y'ÖØĞÂÊäÈëÊäÈë\t'n'·µ»Ø×î¿ªÊ¼Ä¿Â¼\n");
+	printf("/***********ç™»å½•å¤±è´¥***********/\n\n");
+	printf("'y'é‡æ–°è¾“å…¥è¾“å…¥\t'n'è¿”å›æœ€å¼€å§‹ç›®å½•\n");
 	scanf("%c", &fail);
 	if (fail == 'n') return 0;
 	else
@@ -219,21 +219,21 @@ int Fail()
 	}
 }
 
-//×¢²áÒ³Ãæ³É¹¦ÌáÊ¾
+//æ³¨å†Œé¡µé¢æˆåŠŸæç¤º
 int Register()
 {
 	char succes;
-	printf("ÓÃ»§×¢²á³É¹¦\nÊäÈë'y'·µ»ØµÇÂ¼Ò³Ãæ\n\n");
+	printf("ç”¨æˆ·æ³¨å†ŒæˆåŠŸ\nè¾“å…¥'y'ç›´æ¥è¿›è¡Œç™»å½•\n\n");
 	scanf("%c", &succes);
 	if (succes == 'y') return 0;
 }
 
-//»¶Ó­º¯Êı
+//æ¬¢è¿å‡½æ•°
 int Welcome()
 {
 		int i = Succes();
-	if (i == 1){//µ±µÇÂ½³É¹¦Ôò´ò¿ª²Ëµ¥Ò³Ãæ
-		PrintMode();//´òÓ¡²Ëµ¥½çÃæ
+	if (i == 1){//å½“ç™»é™†æˆåŠŸåˆ™æ‰“å¼€èœå•é¡µé¢
+		PrintMode();//æ‰“å°èœå•ç•Œé¢
 		return 0;
 	}
 }
@@ -241,7 +241,7 @@ int Welcome()
 
 int main()
 {
-		menuShow();//´òÓ¡Ö÷½çÃæº¯Êı
+		menuShow();//æ‰“å°ä¸»ç•Œé¢å‡½æ•°
 	    scanf("%d", &chose);
 		getchar();
 		Function(chose);
