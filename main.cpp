@@ -1,17 +1,17 @@
-int main(){ 
+int gongnengmain(){ 
 ALGraph G; 
 AdjList Temp; 
 printf0(); 
 struct Name 
 name[N]={{"1"},{"2"},{"3"},{"4"},{"5"},{"6"},{"7"},{"8"},{"9"},{"10"},{"11"},{"12"}}; 
 OUTPUT(); 
-printf(" ¡ï**** ¡ï**** ¡ï½ÌÑ§¼Æ»®±àÖÆÏµÍ³¡ï **** ¡ï**** ¡ï\n\n"); 
-printf(" ÇëÊäÈëÑ§ÆÚµÄ×ÜÊı :"); 
+printf(" â˜…**** â˜…**** â˜…æ•™å­¦è®¡åˆ’ç¼–åˆ¶ç³»ç»Ÿâ˜… **** â˜…**** â˜…\n\n"); 
+printf(" è¯·è¾“å…¥å­¦æœŸçš„æ€»æ•° :"); 
 scanf("%d",&TotalTerms); 
-printf(" ÇëÊäÈëÑ§ÆÚµÄÑ§·ÖÉÏÏŞ :"); 
+printf(" è¯·è¾“å…¥å­¦æœŸçš„å­¦åˆ†ä¸Šé™ :"); 
 scanf("%d",&MaxScores); 
 CreateGraph(G); 
 Display(G); 
 TopoSort(G,Temp,name); 
-printf(" Ğ»Ğ»Ê¹ÓÃ !\n"); 
+printf(" è°¢è°¢ä½¿ç”¨ !\n"); 
 } 
