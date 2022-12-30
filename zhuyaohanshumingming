@@ -1,9 +1,0 @@
-函数名	功能
-void mainmenu( )	打印文本界面
-void Read_file( )	读取课程信息
-void Print_message( )	输出信息
-void Adjust_message( )	修改信息
-void File_Update()	更新文件信息
-void Arrange_Select	用户选择策略
-void Arrange	用户从排序结果中选择一种进行安排
-void TopoSort	拓扑排序，均匀安排策略和尽快安排策略，选提供多种安排结果并且尽量差异大
