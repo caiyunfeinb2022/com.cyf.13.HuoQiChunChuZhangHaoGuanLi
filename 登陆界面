@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include <stdio.h>
+#include <windows.h>
 #include <string.h>
 //子窗口正确显示
 int Succes();
@@ -31,8 +33,6 @@ char userPwdR[16] = { "abc" };
 char userName[50]={"456"};
 char userPwd[16]={"def"};
 
-
-
 //界面显示
 void menuShow()
 {
@@ -42,6 +42,26 @@ void menuShow()
 
 	printf("请进行如下选择:\n\n\t1.用户登录\n\n\t2.用户注册\n\n\t3.查看更多\n\n\t4.退出系统\n\n");
 	printf("请选择：");
+}
+
+void PrintMode()
+{//系统菜单页面
+	printf("**************************************\n");
+	printf("**************************************\n");
+	printf("******                        ********\n");
+	printf("******    教学计划编制系统    ********\n");
+	printf("******                        ********\n");
+	printf("******                        ********\n");
+	printf("******     0. 课 程 学 分     ********\n");
+	printf("******     1. 键 入 课 程    ********\n");
+	printf("******     2. 查 询 信 息     ********\n");
+	printf("******     3. 先 修 关 系     ********\n");
+	printf("******     4. 退 出 系 统     ********\n");
+	printf("******                        ********\n");
+	printf("******                        ********\n");
+	printf("**************************************\n");
+	printf("**************************************\n\n\n\n");
+	printf("请选择要使用的功能：");
 }
 
 //用户登录选择
@@ -105,7 +125,7 @@ void Function(int chose)
 				getchar();
 			
 			}
-			//超级用户
+			//管理员登录 
 			else
 			{
 				printf("请输入用户名：");
@@ -174,14 +194,15 @@ void Function(int chose)
 	}
 }
 
+
 //子窗口正确显示
 int Succes()
 {
 	char succes;
 	printf("/***********登录成功***********/\n\n");
-	printf("输入'y'返回上一层目录\n");
+	printf("输入'y'进入系统\n");
 	scanf("%c", &succes);
-	if (succes == 'y') return 0;
+	return 	1;
 }
 
 //子窗口错误显示
@@ -189,7 +210,7 @@ int Fail()
 {
 	char fail;
 	printf("/***********登录失败***********/\n\n");
-	printf("'y'重新输入输入\t'n'返回上一层目录\n");
+	printf("'y'重新输入输入\t'n'返回最开始目录\n");
 	scanf("%c", &fail);
 	if (fail == 'n') return 0;
 	else
@@ -202,22 +223,31 @@ int Fail()
 int Register()
 {
 	char succes;
-	printf("用户注册成功\n输入‘enter’返回登录页面\n\n");
+	printf("用户注册成功\n输入'y'返回登录页面\n\n");
 	scanf("%c", &succes);
-	if (succes == '\r') return 0;
+	if (succes == 'y') return 0;
 }
 
+//欢迎函数
+int Welcome()
+{
+		int i = Succes();
+	if (i == 1){//当登陆成功则打开菜单页面
+		PrintMode();//打印菜单界面
+		return 0;
+	}
+}
 
 
 int main()
 {
-	while (1)
-	{
-		menuShow();
-		scanf("%d", &chose);
+		menuShow();//打印主界面函数
+	    scanf("%d", &chose);
 		getchar();
 		Function(chose);
-		if (chose == 4) return 0;
-	}
+		if (chose == 4)  
+		return 0;
+		Welcome();
+	
 	return 0;
 }
