@@ -3,11 +3,11 @@ void OUTPUT()
 { 
 system("color E"); 
 int s; 
-printf("\t ^_^½ÌÑ§¼Æ»®±àÖÆ²Ëµ¥ ^_^ \n"); 
+printf("\t ^_^æ•™å­¦è®¡åˆ’ç¼–åˆ¶èœå• ^_^ \n"); 
 printf("\t *************************************************** \n"); 
-printf("\t ¡ï ¿Î³Ì´úÂë | ¿Î³ÌÃû³Æ | ÏÈĞŞ¿Î³Ì ¡ï \n"); 
+printf("\t â˜… è¯¾ç¨‹ä»£ç  | è¯¾ç¨‹åç§° | å…ˆä¿®è¯¾ç¨‹ â˜… \n"); 
 printf("\t *************************************************** \n"); 
-printf("\t * 1 |C1 | ÎŞ * \n"); 
+printf("\t * 1 |C1 | æ—  * \n"); 
 printf("\t * 2 |C2 | 1 * \n"); 
 printf("\t * 3 |C3 | 1, 2 * \n"); 
 printf("\t * 4 |C4 | 1 * \n"); 
@@ -15,17 +15,17 @@ printf("\t * 5 |C5 | 3, 4 * \n");
 printf("\t * 6 |C6 | 11 * \n"); 
 printf("\t * 7 |C7 | 5, 3 * \n"); 
 printf("\t * 8 |C8 | 3, 6 * \n"); 
-printf("\t * 9 |C9 | ÎŞ * \n"); 
+printf("\t * 9 |C9 | æ—  * \n"); 
 printf("\t * 10 |C10 | 9 * \n"); 
 printf("\t * 11 |C11 | 9 * \n"); 
 printf("\t * 12 |C12 | 9,10,1 * \n"); 
 printf("\t *************************************************** \n"); 
 printf("\n"); 
-printf("< °´ Enter¼ÌĞø>:"); 
-scanf("%c",&s); //scanf("¸ñÊ½¿ØÖÆ·û ",& µØÖ·±íÁĞ )¸ñÊ½ÊäÈëº¯Êı£¬¼´°´ÓÃ»§
-Ö¸¶¨µÄ¸ñÊ½´Ó¼üÅÌÉÏ°ÑÊı¾İÊäÈëµ½Ö¸¶¨µÄ±äÁ¿Ö®ÖĞ
+printf("< æŒ‰ Enterç»§ç»­>:"); 
+scanf("%c",&s); //scanf("æ ¼å¼æ§åˆ¶ç¬¦ ",& åœ°å€è¡¨åˆ— )æ ¼å¼è¾“å…¥å‡½æ•°ï¼Œå³æŒ‰ç”¨æˆ·
+æŒ‡å®šçš„æ ¼å¼ä»é”®ç›˜ä¸ŠæŠŠæ•°æ®è¾“å…¥åˆ°æŒ‡å®šçš„å˜é‡ä¹‹ä¸­
 } 
-/* ²éÕÒÍ¼ÖĞÄ³¸ö¶¥µãÎ»ÖÃ */ 
+/* æŸ¥æ‰¾å›¾ä¸­æŸä¸ªé¡¶ç‚¹ä½ç½® */ 
 int LocateVex(ALGraph G,VertexType u) 
 { 
 int i; 
@@ -34,47 +34,46 @@ if(strcmp(u,G.vertices[i].data)==0)
 return i; 
 return -1; 
 } 
-/* ²ÉÓÃÁÚ½Ó±í´æ´¢½á¹¹ */ 
+/* é‡‡ç”¨é‚»æ¥è¡¨å­˜å‚¨ç»“æ„ */ 
 int CreateGraph(ALGraph &G) 
 { 
 int i,j,k; 
 VertexType va; 
 ArcNode *p; 
-µÚ 24 Ò³ ¹² 29 Ò³
-printf(" ÇëÊäÈë½ÌÑ§¼Æ»®µÄ¿Î³ÌÊı :"); 
+printf(" è¯·è¾“å…¥æ•™å­¦è®¡åˆ’çš„è¯¾ç¨‹æ•° :"); 
 scanf("%d",&G.vexnum); 
-printf(" ÇëÊäÈë¸÷ÃÅ¿Î³ÌµÄÏÈĞŞ¿Î³ÌµÄ×ÜºÍ (»¡×ÜÊı ):"); 
+printf(" è¯·è¾“å…¥å„é—¨è¯¾ç¨‹çš„å…ˆä¿®è¯¾ç¨‹çš„æ€»å’Œ (å¼§æ€»æ•° ):"); 
 scanf("%d",&G.arcnum); 
-printf(" ÇëÊäÈë %d ÃÅ¿Î³ÌµÄ¿Î³Ì´úÂë (×î¶à%d ¸ö×Ö·û ,Êı×Ö):",G.vexnum,MAX_NAME); 
-for(i=0;i<G .vexnum;++i) //¹¹ÔìÍ·½áµã
+printf(" è¯·è¾“å…¥ %d é—¨è¯¾ç¨‹çš„è¯¾ç¨‹ä»£ç  (æœ€å¤š%d ä¸ªå­—ç¬¦ ,æ•°å­—):",G.vexnum,MAX_NAME); 
+for(i=0;i<G .vexnum;++i) //æ„é€ å¤´ç»“ç‚¹
 { 
 scanf("%s",&G.vertices[i].data); 
 G.vertices[i].firstarc=NULL; 
 } 
 for(i=0;i<G .vexnum;i++) 
 { 
-printf(" ÇëÊäÈëµÚ %d ÃÅ¿Î³ÌµÄÑ§·ÖÖµ :",i+1); 
+printf(" è¯·è¾“å…¥ç¬¬ %d é—¨è¯¾ç¨‹çš„å­¦åˆ†å€¼ :",i+1); 
 scanf("%d",&G.vertices[i].grades); 
 while(G.vertices[i].grades>MaxScores||G.vertices[i].grades<=0) 
 { 
-printf(" ¾¯¸æ!Ñ§·Ö±ØĞëÊÇÔÚ 0 µ½×î´óÏŞÖÆ %d Ö®¼ä,Çë¼ì²éºóÔÙÊäÈë !\n",MaxScores); 
-//Èç¹ûÊäÈëµÄÑ§·Ö´óÓÚÉÏÏŞ»òµÈÓÚ 0£¬»á³öÏÖ¾¯¸æ
-printf(" ÇëÊäÈëµÚ %d ÃÅ¿Î³ÌµÄÑ§·ÖÖµ :",i+1); 
+printf(" è­¦å‘Š!å­¦åˆ†å¿…é¡»æ˜¯åœ¨ 0 åˆ°æœ€å¤§é™åˆ¶ %d ä¹‹é—´,è¯·æ£€æŸ¥åå†è¾“å…¥ !\n",MaxScores); 
+//å¦‚æœè¾“å…¥çš„å­¦åˆ†å¤§äºä¸Šé™æˆ–ç­‰äº 0ï¼Œä¼šå‡ºç°è­¦å‘Š
+printf(" è¯·è¾“å…¥ç¬¬ %d é—¨è¯¾ç¨‹çš„å­¦åˆ†å€¼ :",i+1); 
 scanf("%d",&G.vertices[i].grades); 
 } 
 } 
-printf(" ÇëÊäÈëÏÂÁĞ¿Î³ÌµÄÏÈĞŞ¿Î³Ì (ÎŞÏÈĞŞ¿Î³ÌÊäÈë 0,½áÊøÒ²ÊäÈë 0)\n"); 
-for(k=0;k<G.vexnum;++k) //¹¹Ôì±í½áµãÁ´±í ,ÀûÓÃÇ°²å·¨
+printf(" è¯·è¾“å…¥ä¸‹åˆ—è¯¾ç¨‹çš„å…ˆä¿®è¯¾ç¨‹ (æ— å…ˆä¿®è¯¾ç¨‹è¾“å…¥ 0,ç»“æŸä¹Ÿè¾“å…¥ 0)\n"); 
+for(k=0;k<G.vexnum;++k) //æ„é€ è¡¨ç»“ç‚¹é“¾è¡¨ ,åˆ©ç”¨å‰æ’æ³•
 { 
-printf("%s µÄÏÈĞŞ¿Î³Ì :",G.vertices[k].data); /// 
+printf("%s çš„å…ˆä¿®è¯¾ç¨‹ :",G.vertices[k].data); /// 
 scanf("%s",va); // 
 while(va[0]!='0') //ikva 
 { 
-i=LocateVex(G,va); //»¡Î²
-j=k; //»¡Í·
+i=LocateVex(G,va); //å¼§å°¾
+j=k; //å¼§å¤´
 p=(ArcNode*)malloc(sizeof(ArcNode)); 
 p->adjvex=j; 
-p->nextarc=G.vertices[i].firstarc; //²åÔÚ±íÍ·
+p->nextarc=G.vertices[i].firstarc; //æ’åœ¨è¡¨å¤´
 G.vertices[i].firstarc=p; 
 scanf("%s",va); 
 } 
@@ -82,18 +81,17 @@ scanf("%s",va);
 system("cls"); 
 return OK; 
 } 
-/* Êä³öÍ¼ G µÄĞÅÏ¢ */ 
+/* è¾“å‡ºå›¾ G çš„ä¿¡æ¯ */ 
 void Display(ALGraph G) 
-µÚ 25 Ò³ ¹² 29 Ò³
 { 
 system("color B"); 
 int i; 
 ArcNode *p; 
-printf(" ¡ïÓĞÏòÍ¼¡ï \n"); 
-printf("%d ¸ö¶¥µã :",G.vexnum); 
+printf(" â˜…æœ‰å‘å›¾â˜… \n"); 
+printf("%d ä¸ªé¡¶ç‚¹ :",G.vexnum); 
 for(i=0;i<G .vexnum;++i) 
 printf("%4s",G.vertices[i].data); 
-printf("\n%d Ìõ»¡±ß :\n",G.arcnum); 
+printf("\n%d æ¡å¼§è¾¹ :\n",G.arcnum); 
 for(i=0;i<G .vexnum;i++) 
 { 
 p=G.vertices[i].firstarc; 
@@ -104,7 +102,7 @@ p=p->nextarc;
 } 
 } 
 } 
-/* Çó¶¥µãµÄÈë¶È */ 
+/* æ±‚é¡¶ç‚¹çš„å…¥åº¦ */ 
 void FindInDegree(ALGraph G,int indegree[]) 
 { 
 int i; 
