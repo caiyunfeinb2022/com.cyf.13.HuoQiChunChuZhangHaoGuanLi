@@ -1,4 +1,4 @@
-int gongnengmain(){ 
+int main(){ 
 ALGraph G; 
 AdjList Temp; 
 printf0(); 
