@@ -223,7 +223,7 @@ int Fail()
 int Register()
 {
 	char succes;
-	printf("用户注册成功\n输入'y'返回登录页面\n\n");
+	printf("用户注册成功\n输入'y'直接进行登录\n\n");
 	scanf("%c", &succes);
 	if (succes == 'y') return 0;
 }
